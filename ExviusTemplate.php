@@ -71,7 +71,7 @@ class ExviusTemplate extends BaseTemplate {
 				</nav>
 			</div>
 		</header>
-
+	<div id="global-wrapper"<?php echo ($this->data['showads'] && HydraHooks::showSideRailAPUs($this->getSkin()) && $this->config->get('HydraSkinShowSideRail') ? ' class="with-siderail"' : '') ?>>
 		<div id="content" class="mw-body" role="main">
 			<div class="row">
 				<div class="column">
@@ -124,20 +124,44 @@ class ExviusTemplate extends BaseTemplate {
 
 						<?php $this->html( 'sitenotice' ); ?>
 						<h1 id="firstHeading" class="firstHeading"><?php $this->html( 'title' ); ?></h1>
-						<?php if ( $this->data['subtitle'] ) { ?>
-							<div class="subtitle"><?php $this->html( 'subtitle' ) ?></div>
-						<?php } ?>
-						<?php $this->html( 'bodytext' ) ?>
-						<?php $this->html( 'dataAfterContent' ); ?>
-						<?php $this->html( 'catlinks' ); ?>
-
-						<div id="crusades-2">
+						<?php $this->html( 'prebodyhtml' ) ?>
+						<div id="bodyContent" class="mw-body-content">
+							<?php if ( $this->data['subtitle'] ) { ?>
+								<div class="subtitle"><?php $this->html( 'subtitle' ) ?></div>
+							<?php } ?>
 							<?php
+							$this->html( 'bodycontent' );
+
+							if ( $this->data['dataAfterContent'] ) {
+								$this->html( 'dataAfterContent' );
+							}
+
+							if ( $this->data['catlinks'] ) {
+								$this->html( 'catlinks' );
+							}
+							?>
+							<div class="visualClear"></div>
+							<?php $this->html( 'debughtml' ); ?>
+						</div>
+						<?php
+						if ($this->data['showads'] && HydraHooks::showSideRailAPUs($this->getSkin())) {
+						?>
+						<div id="siderail">
+							<?php
+							/* $$placements['new-item'] = $rawHtml;
+							 * Item key should be suitable as an element ID.
+							 * NOTE: Do not sort the placements array!  Some extensions will insert their content in a specific order.
+							 *
+							 * Example:
+							 * <div id="new-item">
+							 *		<img src='htmlexample.png'/>
+							 * </div>
+							*/
 							$placements = [];
-							Hooks::run('BottomPlacements', [&$placements, &$this]);
+							Hooks::run('SideRailPlacements', [&$placements]);
 
 							//Give extensions a chance to sort the placements correctly.
-							Hooks::run('BottomPlacementsBeforeOutput', [&$placements, &$this]);
+							Hooks::run('SideRailPlacementsBeforeOutput', [&$placements]);
 
 							if (is_array($placements) && count($placements)) {
 								foreach ($placements as $id => $placement) {
@@ -146,13 +170,28 @@ class ExviusTemplate extends BaseTemplate {
 							}
 							?>
 						</div>
-						<div class="clearfix"></div>
+						<div class="visualClear"></div>
+						<?php
+						}
+
+						$placements = [];
+						Hooks::run('BottomPlacements', [&$placements, &$this]);
+
+						//Give extensions a chance to sort the placements correctly.
+						Hooks::run('BottomPlacementsBeforeOutput', [&$placements, &$this]);
+
+						if (is_array($placements) && count($placements)) {
+							foreach ($placements as $id => $placement) {
+								echo "<div id=".htmlentities($id).">".$placement."</div>";
+							}
+						}
+						?>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<footer>
+		<div id="exvius_footer">
 			<div class="row">
 				<div class="column small-3">
 					<h3>Action</h3>
@@ -179,28 +218,16 @@ class ExviusTemplate extends BaseTemplate {
 						<li><?php $this->html( 'about' ) ?></li>
 					</ul>
 				</div>
-				<div class="column small-2 end">
-					<h3>Account</h3>
-					<ul>
-						<?php
-							foreach ( $this->getPersonalTools() as $key => $item ) {
-								echo $this->makeListItem( $key, $item );
-							}
-						?>
-					</ul>
-				</div>
 				<div id="crusades-3">
-					<div id="cdm-zone-02"></div>
-					<style>
-						#crusades-3{
-							float: right;
-							margin-right: 0.9375rem;
-						}
-					</style>
+					<?php if ($showAds) { ?>
+						<div class="ad-placement ad-main-med-rect-footer">
+							<?= HydraHooks::getAdBySlot('footermrec') ?>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
-		</footer>
-
+		</div>
+	</div>
 		<?php $this->printTrail(); ?>
 
 		<?php

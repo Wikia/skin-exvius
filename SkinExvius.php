@@ -16,7 +16,7 @@ class SkinExvius extends SkinTemplate {
 
 		// add viewport and scripts
 		// $out->addMeta('viewport', 'width=device-width, user-scalable=yes, initial-scale=1.0');
-		$out->addModules(['skins.exvius.scripts']);
+		$out->addModules(['skins.exvius.scripts', 'skins.hydra.advertisements.js']);
 	}
 
 	/**
