@@ -1,0 +1,45 @@
+{
+	"name": "Exvius",
+	"version": "1.0.0",
+	"author": [
+		"Martin Wahyudi"
+	],
+	"url": "http://exviuswiki.com",
+	"descriptionmsg": "exvius-desc",
+	"license-name": "GPL-2.0+",
+	"type": "skin",
+	"ValidSkinNames": {
+		"exvius": "Exvius"
+	},
+	"MessagesDirs": {
+		"SkinExvius": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"ExviusTemplate": "ExviusTemplate.php",
+		"SkinExvius": "SkinExvius.php"
+	},
+	"ResourceModules": {
+		"skins.exvius.styles": {
+			"position": "top",
+			"styles": [
+				"resources/normalize.css",
+				"resources/foundation.css",
+				"resources/style.css"
+			]
+		},
+		"skins.exvius.scripts": {
+			"position": "top",
+			"scripts": [
+				"resources/Exvius.js"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Exvius"
+	},
+	"config": {},
+	"manifest_version": 1
+}
