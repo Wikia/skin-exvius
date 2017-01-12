@@ -1,12 +1,12 @@
 .row {
-	max-width: 1370px;
+	max-width: 1050px;
 }
 body {
 	font-family: 'Merriweather', Arial, sans-serif;
 	background-image: url(images/bg.jpg);
 	background-color: #C1A26E;
 	color: #1F3656;
-	min-width: 1370px;
+	min-width: 1050px;
 }
 body p:last-child, body ul:last-child {}
 a, a:focus {
@@ -100,7 +100,7 @@ header {
 nav {
 	position: relative;
 	z-index: 100;
-	min-width: 1370px;
+	min-width: 1050px;
 }
 nav li {
 	color: #e2eeff;
