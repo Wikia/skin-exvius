@@ -94,12 +94,6 @@ class ExviusTemplate extends BaseTemplate {
 									}
 								?>
 								<li><?php echo Linker::specialLink('RecentChanges'); ?></li>
-								<li class="label">Account</li>
-								<?php
-									foreach ( $this->getPersonalTools() as $key => $item ) {
-										echo $this->makeListItem( $key, $item );
-									}
-								?>
 							</ul>
 						</li>
 						<?php
@@ -227,42 +221,7 @@ class ExviusTemplate extends BaseTemplate {
 						<div style="clear:both"></div>
 					</div>
 				</div>
-			</div>
-		</div>
-
-		<div id="exvius_footer">
-			<div class="row">
-				<div class="column small-3">
-					<h3>Action</h3>
-					<ul>
-					<?php
-						foreach ( $this->data['content_actions'] as $key => $tab ) {
-							echo $this->makeListItem( $key, $tab, array( 'tag' => 'li' ) );
-						}
-					?>
-					</ul>
-				</div>
-				<div class="column small-3">
-					<h3>Tools</h3>
-					<ul>
-						<?php
-							foreach ( $this->getToolbox() as $key => $tbitem ) {
-								if ($key != 'print' && $key != 'permalink') {
-									echo $this->makeListItem( $key, $tbitem );
-								}
-							}
-						?>
-						<li><?php echo Linker::specialLink('RecentChanges'); ?></li>
-						<li><?php $this->html( 'privacy' ) ?></li>
-					</ul>
-				</div>
-				<div id="crusades-3">
-					<?php if ($showAds) { ?>
-						<div class="ad-placement ad-main-med-rect-footer">
-							<?= HydraHooks::getAdBySlot('footermrec') ?>
-						</div>
-					<?php } ?>
-				</div>
+				<div id="footer-push"></div>
 			</div>
 		</div>
 	</div>
