@@ -1093,3 +1093,7 @@ table.wikitable.navbox>tbody>tr>th {
 .pending {
 	background: #c2ddfd;
 }
+
+#netbar > *, #netbar > *:before, #netbar > *:after, footer#footer {
+	box-sizing: initial;
+}
