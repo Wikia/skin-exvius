@@ -1094,6 +1094,6 @@ table.wikitable.navbox>tbody>tr>th {
 	background: #c2ddfd;
 }
 
-#netbar > *, #netbar > *:before, #netbar > *:after, footer#footer {
+#netbar > *, #netbar > *:before, #netbar > *:after, #curse-footer {
 	box-sizing: initial;
 }
