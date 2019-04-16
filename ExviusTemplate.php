@@ -58,13 +58,15 @@ class ExviusTemplate extends BaseTemplate {
 						</div>
 						<div class="column small-4">
 							<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform">
-								<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
-								<?php echo $this->makeSearchButton( 'go', array(
-									'value' => "Submit",
-									'class' => "searchButton",
-									'id'	=> "searchsubmit",
-								) ); ?>
-								<?php echo $this->makeSearchInput( array( 'type' => 'text', 'id' => 's', 'placeholder' => 'Search') ); ?>
+								<div id="simpleSearch">
+    								<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
+    								<?php echo $this->makeSearchButton( 'go', array(
+    									'value' => "Submit",
+    									'class' => "searchButton",
+    									'id'	=> "searchsubmit",
+    								) ); ?>
+    								<?php echo $this->makeSearchInput( array( 'type' => 'text', 'id' => 'searchInput', 'placeholder' => 'Search') ); ?>
+								</div>
 							</form>
 						</div>
 					</div>
