@@ -9,10 +9,10 @@ body {
 	min-width: 1050px;
 }
 body p:last-child, body ul:last-child {}
-a, a:focus {
+a, a:focus, label.toctogglelabel {
 	color: #3272d2;
 }
-a:hover {
+a:hover, label.toctogglelabel:hover {
 	color: #47c7ff;
 }
 ::-moz-selection {
