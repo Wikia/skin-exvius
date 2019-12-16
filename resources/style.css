@@ -14,6 +14,7 @@ a, a:focus, label.toctogglelabel {
 }
 a:hover, label.toctogglelabel:hover {
 	color: #47c7ff;
+	text-decoration: none;
 }
 ::-moz-selection {
 	background: #9EAAB9;
