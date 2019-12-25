@@ -337,6 +337,24 @@ table.clear-table tr td {
 	border: none;
 }
 
+/* Preferences */
+#preferences {
+    background-color: #FAFDFF;
+}
+
+.mw-prefs-buttons {
+	background-color: #C1A26E;
+	background-image: url(images/main-bg.jpg);
+}
+
+.oo-ui-fieldsetLayout.oo-ui-labelElement > .oo-ui-fieldsetLayout-header > .oo-ui-labelElement-label {
+    margin-bottom: 0;
+}
+
+.oo-ui-fieldsetLayout.oo-ui-labelElement > .oo-ui-fieldsetLayout-header {
+    margin-bottom: 0.5em;
+}
+
 /* Plugin: WikiEditor */
 
 .wikiEditor-ui {
