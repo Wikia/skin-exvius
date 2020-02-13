@@ -793,6 +793,18 @@ section.mw-form-header {
 	background-color: rgba(249, 249, 249, 0.5);
 }
 
+/* Diffs */
+td.diff-context {
+    border-radius: 0;
+}
+
+td.diff-deletedline,
+td.diff-addedline {
+    background: #f8f9fa;
+    border-bottom-color: #eaecf0;
+    border-right-color: #eaecf0;
+}
+
 /* MsUpload */
 
 #upload-container {
