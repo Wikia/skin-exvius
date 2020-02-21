@@ -371,6 +371,9 @@ table.clear-table tr td {
 .wikiEditor-ui-toolbar .group .tool-select .label {
 	font-size: 13px;
 }
+.wikiEditor-ui-toolbar .page-characters div span {
+    height: 1.5em;
+}
 .wikiEditor-ui-controls {
 	font-size: 14px;
 	background-color: transparent !important;
