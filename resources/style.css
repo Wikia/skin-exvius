@@ -342,6 +342,18 @@ table.clear-table tr td {
 	border: none;
 }
 
+/* Sortbale Table: White Arrows */
+
+table.jquery-tablesorter th.headerSort {
+    background-image: url(https://commons.gamepedia.com/media/3/36/Sort_both_white.gif);
+}
+table.jquery-tablesorter th.headerSortUp {
+    background-image: url(https://commons.gamepedia.com/media/8/82/Sort_up_white.gif);
+}
+table.jquery-tablesorter th.headerSortDown {
+    background-image: url(https://commons.gamepedia.com/media/5/56/Sort_down_white.gif);
+}
+
 /* Preferences */
 #preferences {
     background-color: #FAFDFF;
