@@ -382,6 +382,7 @@ table.jquery-tablesorter th.headerSortDown {
 }
 .wikiEditor-ui-toolbar .group .tool-select .label {
 	font-size: 13px;
+    box-sizing: content-box;
 }
 .wikiEditor-ui-toolbar .page-characters div span {
     height: 1.5em;
