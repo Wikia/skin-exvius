@@ -385,7 +385,7 @@ table.jquery-tablesorter th.headerSortDown {
     box-sizing: content-box;
 }
 .wikiEditor-ui-toolbar .page-characters div span {
-    height: 1.5em;
+    height: 1.5em !important;
 }
 .wikiEditor-ui-controls {
 	font-size: 14px;
