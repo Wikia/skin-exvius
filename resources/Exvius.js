@@ -1,4 +1,5 @@
-$(".big-pixelate").each(function() {
+$(".big-pixelate").each(function () {
 	$(this)
-		.width($(this).width() * 2).show();
+		.width($(this).width() * 2)
+		.show();
 });
