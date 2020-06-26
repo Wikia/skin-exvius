@@ -33,10 +33,6 @@
 				"resources/foundation.css",
 				"resources/style.css",
 				"resources/footer.less"
-			],
-			"dependencies": [
-				"skins.hydra.netbar",
-				"skins.hydra.footer"
 			]
 		},
 		"skins.exvius.scripts": {

@@ -28,8 +28,11 @@ class SkinExvius extends SkinTemplate {
 		// add google font and styles
 		$out->addStyle('https://fonts.googleapis.com/css?family=Lato:400,700');
 		$out->addStyle('https://fonts.googleapis.com/css?family=Merriweather:400,700');
-		$styles = ['skins.exvius.styles'];
-		Hooks::run( 'SkinVectorStyleModules', [ $this, &$styles ] );
+		$styles = [
+			'skins.exvius.styles',
+			'skins.hydra.netbar',
+			'skins.hydra.footer'
+		];
 		$out->addModuleStyles($styles);
 	}
 }
