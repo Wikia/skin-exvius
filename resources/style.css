@@ -1259,3 +1259,8 @@ table.wikitable.navbox > tbody > tr > th {
 #curse-footer {
 	box-sizing: initial;
 }
+
+/* WikiEditor Fix */
+.oo-ui-iconElement-icon {
+	background-color: black;
+}
